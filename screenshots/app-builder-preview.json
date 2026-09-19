@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Mallu Nangal — Our History • Our Heritage • Our Legacy",
+      "hasCanvas": false,
+      "bodyTextLen": 3841,
+      "bodyTextHash": "f41c8c6fd0ca1ad8a982041702a6577f34c2fbb555e42084e8a99b9d54406f29",
+      "bodyTextPrefix": "MN Mallu Nangal ਮੱਲੂ ਨੰਗਲ HOME ABOUT HISTORY PERSONALITIES LIBRA",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Mallu Nangal — Our History • Our Heritage • Our Legacy",
+      "hasCanvas": false,
+      "bodyTextLen": 3752,
+      "bodyTextHash": "69527768c0a7e3dfa2c8acdf24887c52c22a58c4816f9c2e2a4021ec5af4c6a8",
+      "bodyTextPrefix": "MN Mallu Nangal ਮੱਲੂ ਨੰਗਲ AMRITSAR DISTRICT · PUNJAB Mallu Nanga",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

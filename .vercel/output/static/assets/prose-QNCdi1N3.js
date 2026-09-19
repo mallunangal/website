@@ -1,0 +1,1 @@
+import{I as e,S as t}from"./index-C61-u0W9.js";var n=e();function r({text:e,className:r}){let i=e.split(/\n\s*\n/).map(e=>e.trim()).filter(Boolean);return(0,n.jsx)(`div`,{className:t(`space-y-4 text-[1.05rem] leading-relaxed text-ink-soft`,r),children:i.map((e,t)=>(0,n.jsx)(`p`,{className:`whitespace-pre-wrap`,children:e},t))})}export{r as t};
