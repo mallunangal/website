@@ -55,7 +55,7 @@ function PersonalityDetail() {
           <Prose text={person.connection} className="mt-3" />
           {person.photos.map((photo) => (
             <figure key={photo.id} className="mt-8">
-              <img src={photo.image} alt={photo.caption} className="w-full rounded-xl object-cover" />
+              <img src={photo.image} alt={photo.caption} className="max-h-[36rem] w-auto max-w-full rounded-xl" />
               {photo.caption ? <figcaption className="mt-2 text-sm text-muted">{photo.caption}</figcaption> : null}
             </figure>
           ))}

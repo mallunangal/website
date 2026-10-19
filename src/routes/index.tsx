@@ -21,6 +21,10 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const data = Route.useLoaderData();
+  const story = data.history.find((article) => article.slug === "brief-history" && !article.isDemo);
+  const people = data.personalities.filter((person) => !person.isDemo);
+  const books = data.manuscripts.filter((item) => !item.isDemo);
+  const hukamnama = data.hukamnama && !data.hukamnama.isDemo ? data.hukamnama : null;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Place",
@@ -101,7 +105,7 @@ function Home() {
             to="/history"
             image="/images/mustard-fields.jpg"
             title="Village History"
-            text="A timeline built from published records — and from what residents still have to add."
+            text="The name of ਮੱਲੂ ਨੰਗਲ, as told in Punjab Kosh and in the Gurdwara account."
           />
           <FeaturePhoto
             to="/library"
@@ -124,6 +128,39 @@ function Home() {
         </div>
       </section>
 
+      {story ? (
+        <section className="border-y border-border bg-paper-deep/50">
+          <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-center md:px-8 md:py-20">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-madder">
+                Traditional history
+              </p>
+              <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">{story.title}</h2>
+              <p className="mt-5 text-[1.05rem] leading-relaxed text-ink-soft">{story.excerpt}</p>
+              <p className="mt-6 border-l-2 border-bronze pl-4 font-gurmukhi text-2xl leading-relaxed text-ink">
+                ਜਾਣਗੇ ਲਿੱਲੇ, ਆਉਣਗੇ ਗਿੱਲੇ
+              </p>
+              <p className="mt-3 text-sm text-muted">
+                Words attributed to Guru Arjan Dev Ji in Punjab Kosh. The visit is undated.
+              </p>
+              <Link
+                to="/history/$slug"
+                params={{ slug: story.slug }}
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-madder"
+              >
+                Read the history <ArrowRight className="size-4" />
+              </Link>
+            </div>
+            <img
+              src="/images/mustard-fields.jpg"
+              alt="Mustard fields in the Amritsar countryside"
+              className="aspect-[4/3] w-full rounded-xl object-cover shadow-card"
+              loading="lazy"
+            />
+          </div>
+        </section>
+      ) : null}
+
       <section className="bg-surface">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:px-8 md:py-20">
           <div>
@@ -135,10 +172,10 @@ function Home() {
               A village of Majha, kept in public memory
             </h2>
             <p className="mt-5 text-[1.05rem] leading-relaxed text-ink-soft">
-              Mallu Nangal — ਮੱਲੂ ਨੰਗਲ, also recorded as Malu Nangal in the Census of India 2011 — is a gram
-              panchayat village in Amritsar district. This site is a museum, a library, and a
-              community noticeboard: it publishes what can be cited, and leaves space for what
-              families still hold.
+              Mallu Nangal — ਮੱਲੂ ਨੰਗਲ, also recorded as Malu Nangal — is a gram panchayat in
+              Amritsar district. A local tradition connects the name with Sri Guru Arjan Dev Ji and
+              Bhai Mallu Ji. The two written accounts do not agree, and no year is known. What can
+              be cited is published here. Family papers are still invited.
             </p>
             <Link
               to="/about"
@@ -156,12 +193,12 @@ function Home() {
         </div>
       </section>
 
-      {data.personalities.length > 0 ? (
+      {people.length > 0 ? (
         <section className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-20">
           <SectionHeading
             kicker="Famous personalities"
             title="Lives bound to the village"
-            lede="Names are published only when they can be sourced. A demo card shows the layout until biographies are ready."
+            lede="Names are published only when they can be sourced."
             action={
               <Link to="/personalities" className="text-sm font-semibold text-madder">
                 All personalities
@@ -169,7 +206,7 @@ function Home() {
             }
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {data.personalities.map((person) => (
+            {people.map((person) => (
               <Link
                 key={person.slug}
                 to="/personalities/$slug"
@@ -200,15 +237,16 @@ function Home() {
           <SectionHeading
             kicker="Digital manuscript library"
             title="Selected manuscripts"
-            lede="Catalogue cards for pothis and papers. Demo objects are labelled until originals are photographed."
+            lede="No original from the village has been photographed yet. The catalogue is ready for a pothi, a land paper, or a letter with a known owner."
             action={
               <Link to="/library" className="text-sm font-semibold text-madder">
                 Open the library
               </Link>
             }
           />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {data.manuscripts.map((item) => (
+          {books.length > 0 ? (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {books.map((item) => (
               <Link
                 key={item.itemCode}
                 to="/library/$code"
@@ -230,8 +268,14 @@ function Home() {
                   <p className="mt-1 text-sm text-muted">{item.category}</p>
                 </div>
               </Link>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <p className="rounded-xl border border-dashed border-border bg-paper/70 p-6 text-sm text-muted">
+              The shelves are empty on purpose. A demo binding is not shown here, so this page does
+              not look as if the village’s manuscripts have already been copied.
+            </p>
+          )}
         </div>
       </section>
 
@@ -242,16 +286,11 @@ function Home() {
               Today's Hukamnama
             </p>
             <h2 className="mt-3 font-display text-4xl font-medium">
-              {data.hukamnama ? formatLongDate(data.hukamnama.date) : "Awaiting a sourced text"}
+              {hukamnama ? formatLongDate(hukamnama.date) : "Awaiting a sourced text"}
             </h2>
-            {data.hukamnama?.isDemo ? (
-              <div className="mt-4">
-                <DemoBadge className="bg-paper/15 text-paper/80" />
-              </div>
-            ) : null}
             <p className="mt-6 max-w-xl whitespace-pre-wrap text-lg leading-relaxed text-paper/85">
-              {data.hukamnama?.translation ??
-                "The latest hukamnama will appear here automatically when an administrator publishes a verified entry."}
+              {hukamnama?.translation ??
+                "No hukamnama has been entered from a named source. This space stays empty until the Punjabi text, the ang, and where it was read are known."}
             </p>
             <Link
               to="/hukamnama"
@@ -262,7 +301,7 @@ function Home() {
           </div>
           <img
             src="/images/gurdwara.jpg"
-            alt="A village gurdwara courtyard with a Nishan Sahib"
+            alt="A gurdwara courtyard used as a placeholder, not a photograph of Mallu Nangal"
             className="aspect-[4/3] w-full rounded-xl object-cover outline-none"
             loading="lazy"
           />

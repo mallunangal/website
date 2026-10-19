@@ -26,7 +26,7 @@ function PersonalitiesPage() {
       <PageHero
         kicker="Personalities"
         title="People of the village"
-        lede="Names, portraits and dates are published only when they can be sourced. A demo card shows the layout."
+        lede="Jathedar Dalip Singh Ji is listed with photographs supplied for the archive. Dates and a written life are still to come. The sample card is labelled and is not a resident."
         image="/images/gurdwara.jpg"
       />
       <div className="mx-auto max-w-6xl px-5 py-14 md:px-8">

@@ -31,7 +31,7 @@ function HistoryPage() {
       <PageHero
         kicker="History"
         title="A timeline of the village"
-        lede="Each node is a record in the archive. Empty centuries stay empty until a source arrives."
+        lede="A short history of ਮੱਲੂ ਨੰਗਲ from the records we hold, then the timeline. Tradition is labeled. Empty centuries stay empty."
         image="/images/mustard-fields.jpg"
       />
       <div className="mx-auto max-w-5xl px-5 py-14 md:px-8">

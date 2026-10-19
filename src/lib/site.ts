@@ -92,6 +92,7 @@ export const VIDEO_CATEGORIES = [
 ] as const;
 
 export const HISTORY_PERIODS = [
+  "Brief history",
   "Ancient Period",
   "Early Settlement",
   "Village Development",

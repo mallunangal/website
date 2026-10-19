@@ -1,5 +1,5 @@
 import { r as cn } from "./utils-DCrcS2-8.mjs";
-import { x as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
+import { C as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/demo-badge-D5XVGU4I.js
 var import_jsx_runtime = require_jsx_runtime();
 function DemoBadge({ className }) {
