@@ -27,8 +27,8 @@ function PersonalityDetail() {
     ["Profession", person.profession],
     ["Education", person.education],
     ["Born", person.birthDate],
-    ["Died", person.deathDate || "—"],
-  ];
+    ["Died", person.deathDate],
+  ].filter(([, value]) => value && value !== "Not yet recorded");
   return (
     <main>
       <PageHero kicker="Personalities" title={person.name} lede={person.profession} image={person.photograph} compact />
@@ -46,7 +46,7 @@ function PersonalityDetail() {
         <div>
           {person.isDemo ? <DemoNotice /> : null}
           <h2 className="mt-6 font-display text-2xl font-medium">Biography</h2>
-          <Prose text={person.biography} className="mt-3" />
+          <Prose text={person.biography} className="mt-3 font-gurmukhi" />
           <h2 className="mt-10 font-display text-2xl font-medium">Achievements</h2>
           <Prose text={person.achievements} className="mt-3" />
           <h2 className="mt-10 font-display text-2xl font-medium">Contributions</h2>

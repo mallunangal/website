@@ -30,7 +30,7 @@ function HukamnamaDatePage() {
         kicker="Hukamnama archive"
         title={formatLongDate(entry.date)}
         lede={entry.ang ? `Ang ${entry.ang}` : "Ang to be added"}
-        image={entry.image || "/images/gurdwara.jpg"}
+        image={entry.image || "/images/gurdwara-exterior-hero.jpg"}
         compact
       />
       <article className="mx-auto max-w-3xl px-5 py-12 md:px-8">

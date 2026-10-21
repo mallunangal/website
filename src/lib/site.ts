@@ -106,7 +106,7 @@ export const ABOUT_IMAGES: Record<string, string> = {
   location: "/images/mustard-fields.jpg",
   overview: "/images/village-lane.jpg",
   culture: "/images/phulkari.jpg",
-  "religious-heritage": "/images/gurdwara.jpg",
+  "religious-heritage": "/images/gurdwara-exterior-hero.jpg",
   education: "/images/school.jpg",
   agriculture: "/images/fields.jpg",
   community: "/images/courtyard.jpg",

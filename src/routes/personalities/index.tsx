@@ -26,8 +26,8 @@ function PersonalitiesPage() {
       <PageHero
         kicker="Personalities"
         title="People of the village"
-        lede="Jathedar Dalip Singh Ji is listed with photographs supplied for the archive. Dates and a written life are still to come. The sample card is labelled and is not a resident."
-        image="/images/gurdwara.jpg"
+        lede="Jathedar Dalip Singh Ji of ਮੱਲੂ ਨੰਗਲ, with the 2003 sanman-pattar and the photographs supplied for the archive. The sample card is labelled and is not a resident."
+        image="/images/courtyard.jpg"
       />
       <div className="mx-auto max-w-6xl px-5 py-14 md:px-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

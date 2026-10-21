@@ -60,8 +60,20 @@ function HukamnamaPage() {
         kicker="Hukamnama"
         title="Today's Hukamnama"
         lede="This page never invents Gurbani. When a verified text and source are entered, they appear here automatically."
-        image="/images/gurdwara.jpg"
+        image="/images/gurdwara-exterior-hero.jpg"
       />
+      <section className="mx-auto grid max-w-6xl gap-4 px-5 pt-10 md:grid-cols-3 md:px-8">
+        {[
+          ["/images/gurdwara-exterior.jpg", "Gurdwara Sahib, ਮੱਲੂ ਨੰਗਲ. Photograph supplied for the archive."],
+          ["/images/gurdwara-interior.jpg", "The inner hall of Gurdwara Sahib. Photograph supplied for the archive."],
+          ["/images/gurdwara-earlier.jpg", "An earlier photograph of the gurdwara. No date is written on the print."],
+        ].map(([src, caption]) => (
+          <figure key={src} className="overflow-hidden rounded-xl bg-surface shadow-card">
+            <img src={src} alt={caption} className="aspect-[4/3] w-full object-cover" />
+            <figcaption className="p-3 text-sm text-muted">{caption}</figcaption>
+          </figure>
+        ))}
+      </section>
       <div className="mx-auto max-w-4xl px-5 py-12 md:px-8">
         {latest ? (
           <article className="rounded-xl bg-surface p-6 shadow-card md:p-8">

@@ -26,7 +26,7 @@ function LivePage() {
         kicker="Live"
         title="Live from Mallu Nangal"
         lede="Administrators can switch a stream on or off without changing the website code."
-        image="/images/gurdwara.jpg"
+        image="/images/gurdwara-exterior-hero.jpg"
       />
       <div className="mx-auto max-w-4xl px-5 py-12 md:px-8">
         {live ? (
@@ -57,7 +57,7 @@ function LivePage() {
         ) : (
           <section className="overflow-hidden rounded-xl bg-surface shadow-card">
             <img
-              src="/images/gurdwara.jpg"
+              src="/images/gurdwara-interior.jpg"
               alt=""
               className="aspect-[21/9] w-full object-cover"
             />

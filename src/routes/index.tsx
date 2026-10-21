@@ -121,7 +121,7 @@ function Home() {
           />
           <FeaturePhoto
             to="/hukamnama"
-            image="/images/gurdwara.jpg"
+            image="/images/gurdwara-exterior-hero.jpg"
             title="Today's Hukamnama"
             text="A reserved place for the day’s hukamnama once a sourced text is entered."
           />
@@ -279,30 +279,30 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-olive text-paper">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1.1fr_0.9fr] md:px-8 md:py-20">
+      <section className="border-y border-border bg-paper-deep/50">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1.1fr_0.9fr] md:items-center md:px-8 md:py-20">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-paper/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-madder">
               Today's Hukamnama
             </p>
             <h2 className="mt-3 font-display text-4xl font-medium">
               {hukamnama ? formatLongDate(hukamnama.date) : "Awaiting a sourced text"}
             </h2>
-            <p className="mt-6 max-w-xl whitespace-pre-wrap text-lg leading-relaxed text-paper/85">
+            <p className="mt-6 max-w-xl whitespace-pre-wrap text-[1.05rem] leading-relaxed text-ink-soft">
               {hukamnama?.translation ??
                 "No hukamnama has been entered from a named source. This space stays empty until the Punjabi text, the ang, and where it was read are known."}
             </p>
             <Link
               to="/hukamnama"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-paper"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-madder"
             >
               Open the hukamnama archive <ArrowRight className="size-4" />
             </Link>
           </div>
           <img
-            src="/images/gurdwara.jpg"
-            alt="A gurdwara courtyard used as a placeholder, not a photograph of Mallu Nangal"
-            className="aspect-[4/3] w-full rounded-xl object-cover outline-none"
+            src="/images/gurdwara-exterior-hero.jpg"
+            alt="Gurdwara Sahib, Mallu Nangal"
+            className="aspect-[4/3] w-full rounded-xl object-cover shadow-card"
             loading="lazy"
           />
         </div>
@@ -353,7 +353,7 @@ function Home() {
           <SectionHeading
             kicker="Village gallery"
             title="Photographs"
-            lede="Albums will fill with credited pictures of Mallu Nangal. Current images are layout studies."
+            lede="Gurdwara Sahib is photographed from prints supplied for the archive. The other albums are still layout studies."
             action={
               <Link to="/gallery" className="text-sm font-semibold text-madder">
                 Browse gallery

@@ -33,7 +33,7 @@ function GalleryPage() {
         kicker="Gallery"
         title="Village photographs"
         lede="Albums are grouped by subject. Captions will name people and places once prints are identified."
-        image="/images/village-lane.jpg"
+        image="/images/gurdwara-exterior-hero.jpg"
       />
       <div className="mx-auto max-w-6xl px-5 py-12 md:px-8">
         <div className="mb-8 flex flex-wrap gap-2">

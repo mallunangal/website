@@ -1,7 +1,7 @@
 import { r as cn } from "./utils-DCrcS2-8.mjs";
 import { C as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as createServerFn } from "./ssr.mjs";
-import { x as createSsrRpc } from "./router-wLaBQUbY.mjs";
+import { x as createSsrRpc } from "./router-uM2ETwDi.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/mutations-KrdoKCGF.js
 var import_jsx_runtime = require_jsx_runtime();
 var fieldClass = "w-full rounded-md bg-paper px-3 text-sm text-ink shadow-[inset_0_0_0_1px_var(--color-border)] placeholder:text-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-madder";
